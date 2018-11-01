@@ -21,8 +21,11 @@ def convolve2d(image, kernel):
     image_padded = np.zeros((image.shape[0] + 2 * padSize, image.shape[1] + 2 * padSize))
     image_padded[padSize:-padSize, padSize:-padSize] = image
 
-    for x in range(image.shape[1]):     # Loop over every pixel of the image
-        for y in range(image.shape[0]):
+    print(image.shape)
+    print(image_padded.shape)
+
+    for x in range(image.shape[0]):     # Loop over every pixel of the image
+        for y in range(image.shape[1]):
             #print(x, y)
             output[x][y] = (kernel * image_padded[x:x + filterSize, y: y + filterSize]).sum()
 
