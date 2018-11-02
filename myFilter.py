@@ -27,9 +27,9 @@ for imagePath in glob.glob(args["images"] + "/*.jpg"):
 	image = cv2.imread(imagePath)
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	found = None
- 
+
 	# loop over the scales of the image
-	for scale in np.linspace(0.2, 1.0, 20)[::-1]:
+	for scale in np.linspace(0.075, 1.0, 20)[::-1]:
 		# resize the image according to the scale, and keep track
 		# of the ratio of the resizing
 		resized = imutils.resize(gray, width = int(gray.shape[1] * scale))
